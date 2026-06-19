@@ -13,13 +13,13 @@
 ## 安装
 
 ```bash
-npx skills add JimLiu/feishu-data-review -y
+npx skills add ruijayfeng/feishu-data-review -y
 ```
 
 或者手动安装：
 
 ```bash
-git clone https://github.com/JimLiu/feishu-data-review.git
+git clone https://github.com/ruijayfeng/feishu-data-review.git
 cd feishu-data-review
 npx skills add skills/feishu-data-review -y
 ```
