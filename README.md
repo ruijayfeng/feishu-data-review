@@ -24,6 +24,16 @@ cd feishu-data-review
 npx skills add skills/feishu-data-review -y
 ```
 
+## 一键安装
+
+复制以下命令发送给你的 Agent，它会自动帮你完成安装：
+
+```bash
+npx skills add ruijayfeng/feishu-data-review -y
+```
+
+---
+
 ## 前置依赖
 
 - 飞书 CLI: `npm install -g @larksuite/cli`
