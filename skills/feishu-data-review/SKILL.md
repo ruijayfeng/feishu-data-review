@@ -211,24 +211,44 @@ python <skill-path>/scripts/analyze.py --input /tmp/feishu_data.csv --output /tm
 
 ## 第五步：生成 PPT 汇报材料
 
-使用 `baoyu-design` skill 将报告转化为可视化 PPT。
+**铁律：PPT 必须由 baoyu-design skill 全流程生成，禁止自己手写 CSS 或代码。**
 
-### 调用方式
+PPT 是 baoyu-design skill 的专长领域，你（feishu-data-review）的职责是准备内容，把设计决策交给 baoyu-design。
 
-1. 读取 `baoyu-design` 的 SKILL.md 了解其 PPT 生成方式
-2. 将第四步的 Markdown 报告作为输入内容
-3. 按照 `baoyu-design` 的规范生成 PPT
+### 标准流程（必须按顺序执行，不可跳过任何步骤）
 
-### PPT 内容结构建议
+1. **读取 baoyu-design 的 SKILL.md**
+   - 路径：`.agents/skills/baoyu-design/SKILL.md` 或 `.claude/skills/baoyu-design/SKILL.md`
+   - 必须理解 baoyu-design 的设计方法论、风格选择流程、色彩系统
+   - 读取完成后，**向用户展示 2-3 个可选的设计风格方向**，让用户选择（不要自作主张）
 
-| 页面 | 内容 |
-|------|------|
+2. **调用 baoyu-design 的 PPT 生成流程**
+   - 使用 baoyu-design 提供的标准命令/工具生成 PPT
+   - 将第四步生成的 Markdown 报告内容作为输入传递给 baoyu-design
+   - 让 baoyu-design 自动完成：设计系统选择 → 风格决策 → 幻灯片布局 → PPT 文件生成
+
+3. **验证输出**
+   - 检查 baoyu-design 输出的 PPT 文件是否存在
+   - 检查是否遵循了 baoyu-design 的设计标准
+   - 如果不符合，回到第 1 步选择其他风格重新生成
+
+**禁止行为：**
+- ❌ 自己写 HTML/CSS 来模拟 PPT 效果
+- ❌ 跳过设计系统选择环节
+- ❌ 跳过风格方向选择环节
+- ❌ 跳过 baoyu-design 的完整流程直接生成内容
+- ❌ 用其他 PPT 生成工具替代 baoyu-design
+
+**PPT 内容结构建议（由 baoyu-design 排版，你只提供内容要点）：**
+
+| 页面 | 内容要点 |
+|------|---------|
 | 封面 | 标题 + 数据范围 + 日期 |
-| 数据概览 | 核心指标一览（大数字卡片式） |
-| 关键发现 1 | 最重要的一个发现 + 数据图表 |
-| 关键发现 2 | 第二重要的发现 + 数据图表 |
-| 趋势总览 | 趋势图 + 拐点标注 |
-| 对比分析 | 分类对比柱状图或表格 |
+| 数据概览 | 核心指标一览表 |
+| 关键发现 1 | 最重要的一个发现 + 数据支撑 |
+| 关键发现 2 | 第二重要的发现 + 数据支撑 |
+| 趋势总览 | 趋势数据摘要 |
+| 对比分析 | 分类对比数据摘要 |
 | 总结建议 | 2-3 条行动建议 |
 
 保存到：`output/presentation.pptx`
