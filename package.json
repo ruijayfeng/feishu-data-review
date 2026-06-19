@@ -1,0 +1,10 @@
+{
+  "name": "feishu-data-review",
+  "version": "1.0.0",
+  "description": "飞书数据复盘分析与可视化报告生成 Skill",
+  "scripts": {},
+  "keywords": ["claude-code", "skill", "feishu", "lark", "data-analysis", "report", "pptx"],
+  "license": "MIT",
+  "author": "Jim Liu",
+  "dependencies": {}
+}

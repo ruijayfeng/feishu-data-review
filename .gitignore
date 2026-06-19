@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.skill
+data_raw.json
+data_clean.csv
+data_rows.json
+check.txt
+output/
+feishu_data.csv
